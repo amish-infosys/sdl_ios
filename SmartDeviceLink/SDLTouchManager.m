@@ -397,9 +397,15 @@ static NSUInteger const MaximumNumberOfTouches = 2;
         typeof(weakSelf) strongSelf = weakSelf;
         strongSelf.singleTapTouch = nil;
         [strongSelf sdl_cancelSingleTapTimer];
+        
+        CGFloat xScaler = point.x * self.scalingFactor.xScaler;
+        CGFloat yScaler = point.y * self.scalingFactor.yScaler;
+        CGPoint scalingPoint = CGPointMake(xScaler, yScaler);
+        
+        //point.x = point.x * scaler.xScaler;
         if ([strongSelf.touchEventDelegate respondsToSelector:@selector(touchManager:didReceiveSingleTapForView:atPoint:)]) {
-            UIView *hitView = (self.hitTester != nil) ? [self.hitTester viewForPoint:point] : nil;
-            [strongSelf.touchEventDelegate touchManager:strongSelf didReceiveSingleTapForView:hitView atPoint:point];
+            UIView *hitView = (self.hitTester != nil) ? [self.hitTester viewForPoint:scalingPoint] : nil;
+            [strongSelf.touchEventDelegate touchManager:strongSelf didReceiveSingleTapForView:hitView atPoint:scalingPoint];
         }
     });
 }

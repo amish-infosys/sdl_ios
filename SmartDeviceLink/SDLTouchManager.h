@@ -15,6 +15,11 @@
 
 @class SDLTouch;
 
+struct SclaeFactor {
+    CGFloat xScaler;
+    CGFloat yScaler;
+};
+
 NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^SDLTouchEventHandler)(SDLTouch *touch, SDLTouchType type);
@@ -71,6 +76,10 @@ typedef void(^SDLTouchEventHandler)(SDLTouch *touch, SDLTouchType type);
  */
 @property (nonatomic, assign, getter=isTouchEnabled) BOOL touchEnabled;
 
+/**
+ Stores the ratio in which the Head Unit displays the application (user requested resolution) w.r.t. the default resolution set in Head Unit.
+ */
+@property (nonatomic, assign, getter=_scalingFactor) struct SclaeFactor scalingFactor;
 /**
  *  @abstract
  *      Cancels pending touch event timers that may be in progress.

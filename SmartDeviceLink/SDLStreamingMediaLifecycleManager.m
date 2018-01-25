@@ -348,6 +348,13 @@ typedef void(^SDLVideoCapabilityResponseHandler)(SDLVideoStreamingCapability *_N
             weakSelf.preferredFormats = [weakSelf.dataSource preferredVideoFormatOrderFromHeadUnitPreferredOrder:weakSelf.preferredFormats];
             weakSelf.preferredResolutions = [weakSelf.dataSource resolutionFromHeadUnitPreferredResolution:weakSelf.preferredResolutions.firstObject];
             SDLImageResolution *imageResolution = weakSelf.preferredResolutions.firstObject;
+            
+            // Calculate the screen ratio for TouchManager
+            struct SclaeFactor scaler = self->_touchManager.scalingFactor;
+            scaler.xScaler = imageResolution.resolutionWidth.floatValue/self->_screenSize.width;
+            scaler.yScaler = imageResolution.resolutionHeight.floatValue/self->_screenSize.height;
+            self->_touchManager.scalingFactor = scaler;
+            
             self->_screenSize = CGSizeMake(imageResolution.resolutionWidth.floatValue, imageResolution.resolutionHeight.floatValue);
             
             if (weakSelf.focusableItemManager != nil) {
