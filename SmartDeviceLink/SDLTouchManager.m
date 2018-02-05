@@ -111,6 +111,8 @@ static NSUInteger const MaximumNumberOfTouches = 2;
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sdl_onTouchEvent:) name:SDLDidReceiveTouchEventNotification object:nil];
 
+    _scalingFactor.xScaler = 0.0;
+    _scalingFactor.yScaler = 0.0;
     return self;
 }
 
