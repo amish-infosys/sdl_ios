@@ -517,7 +517,8 @@ describe(@"the streaming video manager", ^{
 
                     it(@"should have set all the right properties", ^{
                         expect([[SDLGlobals sharedGlobals] mtuSizeForServiceType:SDLServiceTypeVideo]).to(equal(testMTU));
-                        expect(CGSizeEqualToSize(streamingLifecycleManager.screenSize, CGSizeMake(testVideoWidth, testVideoHeight))).to(equal(YES));
+
+                        expect(@(CGSizeEqualToSize(streamingLifecycleManager.screenSize, CGSizeMake(testVideoWidth, testVideoHeight)))).to(equal(YES));
                         expect(streamingLifecycleManager.videoEncrypted).to(equal(YES));
                         expect(streamingLifecycleManager.videoFormat).to(equal([[SDLVideoStreamingFormat alloc] initWithCodec:testVideoCodec protocol:testVideoProtocol]));
                         expect(streamingLifecycleManager.currentVideoStreamState).to(equal(SDLVideoStreamManagerStateReady));
@@ -532,7 +533,7 @@ describe(@"the streaming video manager", ^{
                     });
 
                     it(@"should fall back correctly", ^{
-                        expect(CGSizeEqualToSize(streamingLifecycleManager.screenSize, CGSizeMake(testVideoWidth, testVideoHeight))).to(equal(YES));
+                        expect(@(CGSizeEqualToSize(streamingLifecycleManager.screenSize, CGSizeMake(testVideoWidth, testVideoHeight)))).to(equal(YES));
                         expect(streamingLifecycleManager.videoFormat).to(equal([[SDLVideoStreamingFormat alloc] initWithCodec:SDLVideoStreamingCodecH264 protocol:SDLVideoStreamingProtocolRAW]));
                         expect(streamingLifecycleManager.currentVideoStreamState).to(equal(SDLVideoStreamManagerStateReady));
                     });
@@ -551,7 +552,7 @@ describe(@"the streaming video manager", ^{
                         testVideoStartServicePayload = [[SDLControlFramePayloadVideoStartServiceAck alloc] initWithMTU:testMTU height:SDLControlFrameInt32NotFound width:SDLControlFrameInt32NotFound protocol:nil codec:nil];
                         testVideoMessage = [[SDLV2ProtocolMessage alloc] initWithHeader:testVideoHeader andPayload:testVideoStartServicePayload.data];
 
-                        expect(CGSizeEqualToSize(streamingLifecycleManager.screenSize, CGSizeZero));
+                        expect(@(CGSizeEqualToSize(streamingLifecycleManager.screenSize, CGSizeZero)));
                     });
 
                     context(@"If the data source is nil", ^{
@@ -561,7 +562,7 @@ describe(@"the streaming video manager", ^{
                         });
 
                         it(@"should not replace the existing screen resolution", ^{
-                            expect(CGSizeEqualToSize(streamingLifecycleManager.screenSize, CGSizeZero));
+                            expect(@(CGSizeEqualToSize(streamingLifecycleManager.screenSize, CGSizeZero)));
                             expect(streamingLifecycleManager.dataSource).to(beNil());
                         });
                     });
@@ -574,7 +575,7 @@ describe(@"the streaming video manager", ^{
 
                         it(@"should set the screen size using the first provided preferred resolution", ^{
                             CGSize preferredFormat = CGSizeMake(preferredResolutionLow.resolutionWidth.floatValue, preferredResolutionLow.resolutionHeight.floatValue);
-                            expect(CGSizeEqualToSize(streamingLifecycleManager.screenSize, preferredFormat));
+                            expect(@(CGSizeEqualToSize(streamingLifecycleManager.screenSize, preferredFormat)));
                             expect(streamingLifecycleManager.dataSource).toNot(beNil());
                         });
                     });

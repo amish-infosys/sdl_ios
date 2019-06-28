@@ -100,7 +100,7 @@ describe(@"Getter/Setter Tests", ^ {
         expect(testStruct.heatedWindshieldEnable).to(equal(@YES));
         expect(testStruct.heatedRearWindowEnable).to(equal(@NO));
         expect(testStruct.heatedMirrorsEnable).to(equal(@YES));
-        expect(testStruct.climateEnable).to(equal(@YES));
+        expect(testStruct.climateEnable).to(equal(@NO));
     });
 
     it(@"Should get correctly when initialized with a dictionary", ^ {

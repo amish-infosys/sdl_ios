@@ -34,7 +34,7 @@ describe(@"Getter/Setter Tests", ^ {
         testStruct.ventilationMode = [@[SDLVentilationModeUpper] copy];
         testStruct.heatedSteeringWheelAvailable = @(YES);
         testStruct.heatedWindshieldAvailable = @(NO);
-        testStruct.heatedRearWindowAvailable = @(YES);
+        testStruct.heatedRearWindowAvailable = @(NO);
         testStruct.heatedMirrorsAvailable = @(NO);
         testStruct.climateEnableAvailable = @(NO);
         
@@ -52,7 +52,7 @@ describe(@"Getter/Setter Tests", ^ {
         expect(testStruct.ventilationMode).to(equal([@[SDLVentilationModeUpper] copy]));
         expect(testStruct.heatedSteeringWheelAvailable).to(equal(@YES));
         expect(testStruct.heatedWindshieldAvailable).to(equal(@NO));
-        expect(testStruct.heatedRearWindowAvailable).to(equal(@YES));
+        expect(testStruct.heatedRearWindowAvailable).to(equal(@NO));
         expect(testStruct.heatedMirrorsAvailable).to(equal(@NO));
         expect(testStruct.climateEnableAvailable).to(equal(@NO));
 
@@ -73,7 +73,7 @@ describe(@"Getter/Setter Tests", ^ {
                                                        SDLRPCParameterNameVentilationMode:[@[SDLVentilationModeUpper] copy],
                                                        SDLRPCParameterNameHeatedSteeringWheelAvailable:@YES,
                                                            SDLRPCParameterNameHeatedWindshieldAvailable:@NO,
-                                                           SDLRPCParameterNameHeatedRearWindowAvailable:@YES,
+                                                           SDLRPCParameterNameHeatedRearWindowAvailable:@NO,
                                                        SDLRPCParameterNameHeatedMirrorsAvailable:@NO,
                                                        SDLRPCParameterNameClimateEnableAvailable:@NO,
                                                        } mutableCopy];
@@ -96,7 +96,7 @@ describe(@"Getter/Setter Tests", ^ {
         expect(testStruct.ventilationMode).to(equal([@[SDLVentilationModeUpper] copy]));
         expect(testStruct.heatedSteeringWheelAvailable).to(equal(@YES));
         expect(testStruct.heatedWindshieldAvailable).to(equal(@NO));
-        expect(testStruct.heatedRearWindowAvailable).to(equal(@YES));
+        expect(testStruct.heatedRearWindowAvailable).to(equal(@NO));
         expect(testStruct.heatedMirrorsAvailable).to(equal(@NO));
         expect(testStruct.climateEnableAvailable).to(equal(@NO));
     });
@@ -116,7 +116,7 @@ describe(@"Getter/Setter Tests", ^ {
         expect(testStruct.dualModeEnableAvailable).to(equal(@NO));
         expect(testStruct.defrostZoneAvailable).to(equal(@YES));
         expect(testStruct.ventilationModeAvailable).to(equal(@YES));
-        expect(testStruct.heatedSteeringWheelAvailable).to(equal(@NO));
+        expect(testStruct.heatedSteeringWheelAvailable).to(equal(@YES));
         expect(testStruct.heatedWindshieldAvailable).to(equal(@NO));
         expect(testStruct.heatedRearWindowAvailable).to(equal(@NO));
         expect(testStruct.heatedMirrorsAvailable).to(equal(@NO));
@@ -139,7 +139,7 @@ describe(@"Getter/Setter Tests", ^ {
         expect(testStruct.ventilationModeAvailable).to(equal(@YES));
         expect(testStruct.heatedSteeringWheelAvailable).to(equal(@YES));
         expect(testStruct.heatedWindshieldAvailable).to(equal(@NO));
-        expect(testStruct.heatedRearWindowAvailable).to(equal(@YES));
+        expect(testStruct.heatedRearWindowAvailable).to(equal(@NO));
         expect(testStruct.heatedMirrorsAvailable).to(equal(@NO));
     });
     
