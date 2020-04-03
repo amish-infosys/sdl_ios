@@ -170,3 +170,10 @@ extern SDLVehicleDataType const SDLVehicleDataTypeCloudAppVehicleID;
  Added in SDL 6.0
  */
 extern SDLVehicleDataType const SDLVehicleDataTypeOEMVehicleDataType;
+
+/**
+ Stability Control Status
+ 
+ Added in SDL 6.5
+ */
+extern SDLVehicleDataType const SDLVehicleDataTypeVehicledataStabilitycontrolsstatus;
