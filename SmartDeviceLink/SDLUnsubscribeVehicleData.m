@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (instancetype)initWithGps:(BOOL)gps speed:(BOOL)speed rpm:(BOOL)rpm fuelLevel:(BOOL)fuelLevel fuelLevel_State:(BOOL)fuelLevel_State instantFuelConsumption:(BOOL)instantFuelConsumption fuelRange:(BOOL)fuelRange externalTemperature:(BOOL)externalTemperature turnSignal:(BOOL)turnSignal prndl:(BOOL)prndl tirePressure:(BOOL)tirePressure odometer:(BOOL)odometer beltStatus:(BOOL)beltStatus bodyInformation:(BOOL)bodyInformation deviceStatus:(BOOL)deviceStatus driverBraking:(BOOL)driverBraking wiperStatus:(BOOL)wiperStatus headLampStatus:(BOOL)headLampStatus engineTorque:(BOOL)engineTorque accPedalPosition:(BOOL)accPedalPosition steeringWheelAngle:(BOOL)steeringWheelAngle engineOilLife:(BOOL)engineOilLife electronicParkBrakeStatus:(BOOL)electronicParkBrakeStatus cloudAppVehicleID:(BOOL)cloudAppVehicleID eCallInfo:(BOOL)eCallInfo airbagStatus:(BOOL)airbagStatus emergencyEvent:(BOOL)emergencyEvent clusterModeStatus:(BOOL)clusterModeStatus myKey:(BOOL)myKey handsOffSteering:(BOOL)handsOffSteering {
-    self = [super init];
+    self = [self init];
     if (!self) {
         return nil;
     }

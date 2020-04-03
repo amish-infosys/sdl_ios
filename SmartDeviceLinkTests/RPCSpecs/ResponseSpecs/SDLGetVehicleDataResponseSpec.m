@@ -81,6 +81,7 @@ describe(@"Getter/Setter Tests", ^ {
         testResponse.turnSignal = SDLTurnSignalBoth;
         testResponse.vin = vin;
         testResponse.wiperStatus = SDLWiperStatusAutomaticHigh;
+        testResponse.handsOffSteering = @NO;
 
         expect(testResponse.accPedalPosition).to(equal(@0));
         expect(testResponse.airbagStatus).to(equal(airbag));
@@ -112,6 +113,7 @@ describe(@"Getter/Setter Tests", ^ {
         expect(testResponse.turnSignal).to(equal(SDLTurnSignalBoth));
         expect(testResponse.vin).to(equal(vin));
         expect(testResponse.wiperStatus).to(equal(SDLWiperStatusAutomaticHigh));
+        expect(testResponse.handsOffSteering).to(equal(@NO));
     });
     
     it(@"Should get correctly when initialized", ^ {
@@ -147,7 +149,8 @@ describe(@"Getter/Setter Tests", ^ {
                                                      SDLRPCParameterNameTirePressure:tires,
                                                      SDLRPCParameterNameTurnSignal:SDLTurnSignalOff,
                                                      SDLRPCParameterNameVIN:vin,
-                                                     SDLRPCParameterNameWiperStatus:SDLWiperStatusAutomaticHigh},
+                                                     SDLRPCParameterNameWiperStatus:SDLWiperStatusAutomaticHigh,
+                                                     SDLRPCParameterNameHandsOffSteering:@NO},
                                              SDLRPCParameterNameOperationName:SDLRPCFunctionNameGetVehicleData}} mutableCopy];
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -184,6 +187,7 @@ describe(@"Getter/Setter Tests", ^ {
         expect(testResponse.turnSignal).to(equal(SDLTurnSignalOff));
         expect(testResponse.vin).to(equal(vin));
         expect(testResponse.wiperStatus).to(equal(SDLWiperStatusAutomaticHigh));
+        expect(testResponse.handsOffSteering).to(equal(@NO));
     });
     
     it(@"Should return nil if not set", ^ {
@@ -219,6 +223,7 @@ describe(@"Getter/Setter Tests", ^ {
         expect(testResponse.turnSignal).to(beNil());
         expect(testResponse.vin).to(beNil());
         expect(testResponse.wiperStatus).to(beNil());
+        expect(testResponse.handsOffSteering).to(beNil());
     });
 
     it(@"Should set and get Generic Network Signal Data", ^{
