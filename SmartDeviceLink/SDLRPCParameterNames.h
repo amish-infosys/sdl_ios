@@ -121,6 +121,7 @@ extern SDLRPCParameterName const SDLRPCParameterNameCountryName;
 extern SDLRPCParameterName const SDLRPCParameterNameCRC;
 extern SDLRPCParameterName const SDLRPCParameterNameClockText;
 extern SDLRPCParameterName const SDLRPCParameterNameCloudAppVehicleID;
+extern SDLRPCParameterName const SDLRPCParameterNameHandsOffSteering;
 extern SDLRPCParameterName const SDLRPCParameterNameCloudTransportType;
 extern SDLRPCParameterName const SDLRPCParameterNameCurrentForecast;
 extern SDLRPCParameterName const SDLRPCParameterNameCurrentForecastSupported;

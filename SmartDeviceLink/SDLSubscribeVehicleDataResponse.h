@@ -220,6 +220,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) SDLVehicleDataResult *cloudAppVehicleID;
 
 /**
+ * To indicate whether driver hands are off the steering wheel
+ */
+@property (nullable, strong, nonatomic) SDLVehicleDataResult *handsOffSteering;
+
+/**
  Sets the OEM custom vehicle data state for any given OEM custom vehicle data name.
  
  @param vehicleDataName The name of the OEM custom vehicle data item.

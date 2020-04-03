@@ -119,6 +119,7 @@ SDLRPCParameterName const SDLRPCParameterNameCountryName = @"countryName";
 SDLRPCParameterName const SDLRPCParameterNameCRC = @"crc";
 SDLRPCParameterName const SDLRPCParameterNameClockText = @"CT";
 SDLRPCParameterName const SDLRPCParameterNameCloudAppVehicleID = @"cloudAppVehicleID";
+SDLRPCParameterName const SDLRPCParameterNameHandsOffSteering = @"handsOffSteering";
 SDLRPCParameterName const SDLRPCParameterNameCloudTransportType = @"cloudTransportType";
 SDLRPCParameterName const SDLRPCParameterNameCurrentForecast = @"currentForecast";
 SDLRPCParameterName const SDLRPCParameterNameCurrentForecastSupported = @"currentForecastSupported";

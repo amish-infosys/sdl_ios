@@ -170,3 +170,8 @@ extern SDLVehicleDataType const SDLVehicleDataTypeCloudAppVehicleID;
  Added in SDL 6.0
  */
 extern SDLVehicleDataType const SDLVehicleDataTypeOEMVehicleDataType;
+
+/**
+ To indicate whether driver hands are off the steering wheel
+ */
+extern SDLVehicleDataType const SDLVehicleDataTypeVehicledataHandsoffsteering;

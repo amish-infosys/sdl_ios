@@ -26,45 +26,44 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (instancetype)initWithAccelerationPedalPosition:(BOOL)accelerationPedalPosition airbagStatus:(BOOL)airbagStatus beltStatus:(BOOL)beltStatus bodyInformation:(BOOL)bodyInformation clusterModeStatus:(BOOL)clusterModeStatus deviceStatus:(BOOL)deviceStatus driverBraking:(BOOL)driverBraking eCallInfo:(BOOL)eCallInfo electronicParkBrakeStatus:(BOOL)electronicParkBrakeStatus emergencyEvent:(BOOL)emergencyEvent engineOilLife:(BOOL)engineOilLife engineTorque:(BOOL)engineTorque externalTemperature:(BOOL)externalTemperature fuelLevel:(BOOL)fuelLevel fuelLevelState:(BOOL)fuelLevelState fuelRange:(BOOL)fuelRange gps:(BOOL)gps headLampStatus:(BOOL)headLampStatus instantFuelConsumption:(BOOL)instantFuelConsumption myKey:(BOOL)myKey odometer:(BOOL)odometer prndl:(BOOL)prndl rpm:(BOOL)rpm speed:(BOOL)speed steeringWheelAngle:(BOOL)steeringWheelAngle tirePressure:(BOOL)tirePressure turnSignal:(BOOL)turnSignal wiperStatus:(BOOL)wiperStatus {
-    return [self initWithAccelerationPedalPosition:accelerationPedalPosition airbagStatus:airbagStatus beltStatus:beltStatus bodyInformation:bodyInformation cloudAppVehicleID:NO clusterModeStatus:clusterModeStatus deviceStatus:deviceStatus driverBraking:driverBraking eCallInfo:eCallInfo electronicParkBrakeStatus:electronicParkBrakeStatus emergencyEvent:emergencyEvent engineOilLife:engineOilLife engineTorque:engineTorque externalTemperature:externalTemperature fuelLevel:fuelLevel fuelLevelState:fuelLevelState fuelRange:fuelRange gps:gps headLampStatus:headLampStatus instantFuelConsumption:instantFuelConsumption myKey:myKey odometer:odometer prndl:prndl rpm:rpm speed:speed steeringWheelAngle:steeringWheelAngle tirePressure:tirePressure turnSignal:turnSignal wiperStatus:wiperStatus];
+    return  [self initWithGps:gps speed:speed rpm:rpm fuelLevel:fuelLevel fuelLevel_State:fuelLevelState instantFuelConsumption:instantFuelConsumption fuelRange:fuelRange externalTemperature:externalTemperature turnSignal:turnSignal prndl:prndl tirePressure:tirePressure odometer:odometer beltStatus:beltStatus bodyInformation:bodyInformation deviceStatus:deviceStatus driverBraking:driverBraking wiperStatus:wiperStatus headLampStatus:headLampStatus engineTorque:engineTorque accPedalPosition:accelerationPedalPosition steeringWheelAngle:steeringWheelAngle engineOilLife:engineOilLife electronicParkBrakeStatus:electronicParkBrakeStatus cloudAppVehicleID:NO eCallInfo:eCallInfo airbagStatus:airbagStatus emergencyEvent:emergencyEvent clusterModeStatus:clusterModeStatus myKey:myKey handsOffSteering:NO];
 }
 
-- (instancetype)initWithAccelerationPedalPosition:(BOOL)accelerationPedalPosition airbagStatus:(BOOL)airbagStatus beltStatus:(BOOL)beltStatus bodyInformation:(BOOL)bodyInformation cloudAppVehicleID:(BOOL)cloudAppVehicleID clusterModeStatus:(BOOL)clusterModeStatus deviceStatus:(BOOL)deviceStatus driverBraking:(BOOL)driverBraking eCallInfo:(BOOL)eCallInfo electronicParkBrakeStatus:(BOOL)electronicParkBrakeStatus emergencyEvent:(BOOL)emergencyEvent engineOilLife:(BOOL)engineOilLife engineTorque:(BOOL)engineTorque externalTemperature:(BOOL)externalTemperature fuelLevel:(BOOL)fuelLevel fuelLevelState:(BOOL)fuelLevelState fuelRange:(BOOL)fuelRange gps:(BOOL)gps headLampStatus:(BOOL)headLampStatus instantFuelConsumption:(BOOL)instantFuelConsumption myKey:(BOOL)myKey odometer:(BOOL)odometer prndl:(BOOL)prndl rpm:(BOOL)rpm speed:(BOOL)speed steeringWheelAngle:(BOOL)steeringWheelAngle tirePressure:(BOOL)tirePressure turnSignal:(BOOL)turnSignal wiperStatus:(BOOL)wiperStatus {
-    self = [self init];
+- (instancetype)initWithGps:(BOOL)gps speed:(BOOL)speed rpm:(BOOL)rpm fuelLevel:(BOOL)fuelLevel fuelLevel_State:(BOOL)fuelLevel_State instantFuelConsumption:(BOOL)instantFuelConsumption fuelRange:(BOOL)fuelRange externalTemperature:(BOOL)externalTemperature turnSignal:(BOOL)turnSignal prndl:(BOOL)prndl tirePressure:(BOOL)tirePressure odometer:(BOOL)odometer beltStatus:(BOOL)beltStatus bodyInformation:(BOOL)bodyInformation deviceStatus:(BOOL)deviceStatus driverBraking:(BOOL)driverBraking wiperStatus:(BOOL)wiperStatus headLampStatus:(BOOL)headLampStatus engineTorque:(BOOL)engineTorque accPedalPosition:(BOOL)accPedalPosition steeringWheelAngle:(BOOL)steeringWheelAngle engineOilLife:(BOOL)engineOilLife electronicParkBrakeStatus:(BOOL)electronicParkBrakeStatus cloudAppVehicleID:(BOOL)cloudAppVehicleID eCallInfo:(BOOL)eCallInfo airbagStatus:(BOOL)airbagStatus emergencyEvent:(BOOL)emergencyEvent clusterModeStatus:(BOOL)clusterModeStatus myKey:(BOOL)myKey handsOffSteering:(BOOL)handsOffSteering {
+    self = [super init];
     if (!self) {
         return nil;
     }
-
-    self.accPedalPosition = @(accelerationPedalPosition);
-    self.airbagStatus = @(airbagStatus);
+    self.gps = @(gps);
+    self.speed = @(speed);
+    self.rpm = @(rpm);
+    self.fuelLevel = @(fuelLevel);
+    self.fuelLevel_State = @(fuelLevel_State);
+    self.instantFuelConsumption = @(instantFuelConsumption);
+    self.fuelRange = @(fuelRange);
+    self.externalTemperature = @(externalTemperature);
+    self.turnSignal = @(turnSignal);
+    self.prndl = @(prndl);
+    self.tirePressure = @(tirePressure);
+    self.odometer = @(odometer);
     self.beltStatus = @(beltStatus);
     self.bodyInformation = @(bodyInformation);
-    self.cloudAppVehicleID = @(cloudAppVehicleID);
-    self.clusterModeStatus = @(clusterModeStatus);
     self.deviceStatus = @(deviceStatus);
     self.driverBraking = @(driverBraking);
-    self.eCallInfo = @(eCallInfo);
-    self.electronicParkBrakeStatus = @(electronicParkBrakeStatus);
-    self.emergencyEvent = @(emergencyEvent);
-    self.engineOilLife = @(engineOilLife);
-    self.engineTorque = @(engineTorque);
-    self.externalTemperature = @(externalTemperature);
-    self.fuelLevel = @(fuelLevel);
-    self.fuelLevel_State = @(fuelLevelState);
-    self.fuelRange = @(fuelRange);
-    self.myKey = @(myKey);
-    self.odometer = @(odometer);
-    self.gps = @(gps);
-    self.headLampStatus = @(headLampStatus);
-    self.instantFuelConsumption = @(instantFuelConsumption);
-    self.prndl = @(prndl);
-    self.rpm = @(rpm);
-    self.speed = @(speed);
-    self.steeringWheelAngle = @(steeringWheelAngle);
-    self.tirePressure = @(tirePressure);
-    self.turnSignal = @(turnSignal);
     self.wiperStatus = @(wiperStatus);
-
+    self.headLampStatus = @(headLampStatus);
+    self.engineTorque = @(engineTorque);
+    self.accPedalPosition = @(accPedalPosition);
+    self.steeringWheelAngle = @(steeringWheelAngle);
+    self.engineOilLife = @(engineOilLife);
+    self.electronicParkBrakeStatus = @(electronicParkBrakeStatus);
+    self.cloudAppVehicleID = @(cloudAppVehicleID);
+    self.eCallInfo = @(eCallInfo);
+    self.airbagStatus = @(airbagStatus);
+    self.emergencyEvent = @(emergencyEvent);
+    self.clusterModeStatus = @(clusterModeStatus);
+    self.myKey = @(myKey);
+    self.handsOffSteering = @(handsOffSteering);
     return self;
 }
 
@@ -298,6 +297,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (nullable NSNumber<SDLBool> *)cloudAppVehicleID {
     return [self.parameters sdl_objectForName:SDLRPCParameterNameCloudAppVehicleID ofClass:NSNumber.class error:nil];
+}
+
+- (void)setHandsOffSteering:(nullable NSNumber<SDLBool> *)handsOffSteering {
+    [self.parameters sdl_setObject:handsOffSteering forName:SDLRPCParameterNameHandsOffSteering];
+}
+
+- (nullable NSNumber<SDLBool> *)handsOffSteering {
+    return [self.parameters sdl_objectForName:SDLRPCParameterNameHandsOffSteering ofClass:NSNumber.class error:nil];
 }
 
 - (void)setOEMCustomVehicleData:(NSString *)vehicleDataName withVehicleDataState:(BOOL)vehicleDataState {
