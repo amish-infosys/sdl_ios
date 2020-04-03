@@ -189,6 +189,7 @@ FOUNDATION_EXPORT const unsigned char SmartDeviceLinkVersionString[];
 #import "SDLButtonCapabilities.h"
 #import "SDLChoice.h"
 #import "SDLClusterModeStatus.h"
+#import "SDLStabilityControlsStatus.h"
 #import "SDLClimateControlCapabilities.h"
 #import "SDLClimateControlData.h"
 #import "SDLCloudAppProperties.h"
