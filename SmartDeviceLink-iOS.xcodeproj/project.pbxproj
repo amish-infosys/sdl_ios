@@ -412,7 +412,7 @@
 		2F214B28243B037C0063376F /* SDLSeatStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F214B26243B037B0063376F /* SDLSeatStatus.h */; };
 		2F214B29243B037C0063376F /* SDLSeatStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F214B27243B037C0063376F /* SDLSeatStatus.m */; };
 		2F214B2C243B03900063376F /* SDLSeatOccupancy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F214B2A243B038F0063376F /* SDLSeatOccupancy.m */; };
-		2F214B2D243B03900063376F /* SDLSeatOccupancy.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F214B2B243B038F0063376F /* SDLSeatOccupancy.h */; };
+		2F214B2D243B03900063376F /* SDLSeatOccupancy.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F214B2B243B038F0063376F /* SDLSeatOccupancy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		332A914F1CED9CC60043824C /* SDLAppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 332A913D1CED87F80043824C /* SDLAppInfo.m */; };
 		332A91501CED9CF10043824C /* SDLAppInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 332A913C1CED87F80043824C /* SDLAppInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D00AC671F140F0A004000D9 /* SDLSystemCapabilityType.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D00AC651F140F0A004000D9 /* SDLSystemCapabilityType.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -6534,6 +6534,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F214B2D243B03900063376F /* SDLSeatOccupancy.h in Headers */,
 				9F425AD222DD980200BE3245 /* SDLWindowCapability.h in Headers */,
 				9F425ADA22DD983500BE3245 /* SDLDisplayCapability.h in Headers */,
 				9F425ACE22DD97DE00BE3245 /* SDLTemplateConfiguration.h in Headers */,
@@ -6793,7 +6794,6 @@
 				5D61FDBD1A84238C00846EE7 /* SDLSystemContext.h in Headers */,
 				5D61FC511A84238C00846EE7 /* SDLButtonCapabilities.h in Headers */,
 				5D61FDE91A84238C00846EE7 /* SDLUnsubscribeButtonResponse.h in Headers */,
-				2F214B2D243B03900063376F /* SDLSeatOccupancy.h in Headers */,
 				5D61FCD51A84238C00846EE7 /* SDLImageType.h in Headers */,
 				5D76750E22D8FB3700E8D71A /* SDLMenuLayout.h in Headers */,
 				8803DCEF22C2B84B00FBB7CE /* SDLBackgroundTaskManager.h in Headers */,
