@@ -22,6 +22,7 @@
 @class SDLHeadLampStatus;
 @class SDLMyKey;
 @class SDLTireStatus;
+@class SDLSeatOccupancy;
 
 
 /**
@@ -185,6 +186,13 @@ NS_ASSUME_NONNULL_BEGIN
  The cloud app vehicle ID
  */
 @property (nullable, strong, nonatomic) NSString *cloudAppVehicleID;
+
+/**
+ * See SeatOccupancy
+ *
+ * @since SDL 6.5.0
+ */
+@property (nullable, strong, nonatomic) SDLSeatOccupancy *seatOccupancy;
 
 /**
  Sets the OEM custom vehicle data state for any given OEM custom vehicle data name.

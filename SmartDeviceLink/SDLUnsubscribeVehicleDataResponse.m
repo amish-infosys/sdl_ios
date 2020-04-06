@@ -254,6 +254,14 @@ NS_ASSUME_NONNULL_BEGIN
     return [self.parameters sdl_objectForName:SDLRPCParameterNameCloudAppVehicleID ofClass:SDLVehicleDataResult.class error:nil];
 }
 
+- (void)setSeatOccupancy:(nullable SDLVehicleDataResult *)seatOccupancy {
+    [self.parameters sdl_setObject:seatOccupancy forName:SDLRPCParameterNameSeatOccupancy];
+}
+
+- (nullable SDLVehicleDataResult *)seatOccupancy {
+    return [self.parameters sdl_objectForName:SDLRPCParameterNameSeatOccupancy ofClass:SDLVehicleDataResult.class error:nil];
+}
+
 - (void)setOEMCustomVehicleData:(NSString *)vehicleDataName withVehicleDataState:(SDLVehicleDataResult *)vehicleDataState {
     [self.parameters sdl_setObject:vehicleDataState forName:vehicleDataName];
 }

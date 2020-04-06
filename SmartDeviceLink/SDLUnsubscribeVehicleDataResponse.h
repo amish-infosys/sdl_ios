@@ -219,6 +219,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) SDLVehicleDataResult *cloudAppVehicleID;
 
 /**
+ * See SeatOccupancy
+ *
+ * @since SDL 6.5.0
+ */
+@property (nullable, strong, nonatomic) SDLVehicleDataResult *seatOccupancy;
+
+/**
  Sets the OEM custom vehicle data state for any given OEM custom vehicle data name.
  
  @param vehicleDataName The name of the OEM custom vehicle data item.

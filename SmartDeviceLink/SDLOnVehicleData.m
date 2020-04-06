@@ -18,6 +18,7 @@
 #import "SDLRPCParameterNames.h"
 #import "SDLRPCFunctionNames.h"
 #import "SDLTireStatus.h"
+#import "SDLSeatOccupancy.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -270,6 +271,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (nullable NSString *)cloudAppVehicleID {
     return [self.parameters sdl_objectForName:SDLRPCParameterNameCloudAppVehicleID ofClass:NSString.class error:nil];
+}
+
+- (void)setSeatOccupancy:(nullable SDLSeatOccupancy *)seatOccupancy {
+    [self.parameters sdl_setObject:seatOccupancy forName:SDLRPCParameterNameSeatOccupancy];
+}
+
+- (nullable SDLSeatOccupancy *)seatOccupancy {
+    return [self.parameters sdl_objectForName:SDLRPCParameterNameSeatOccupancy ofClass:SDLSeatOccupancy.class error:nil];
 }
 
 - (void)setOEMCustomVehicleData:(NSString *)vehicleDataName withVehicleDataState:(NSObject *)vehicleDataState {
