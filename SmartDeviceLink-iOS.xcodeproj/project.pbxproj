@@ -409,7 +409,9 @@
 		2BF2F84F20ED004000A26EF2 /* SDLAudioStreamingIndicator.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF2F84D20ED004000A26EF2 /* SDLAudioStreamingIndicator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BF2F85020ED004000A26EF2 /* SDLAudioStreamingIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2F84E20ED004000A26EF2 /* SDLAudioStreamingIndicator.m */; };
 		2BF2F85220ED068200A26EF2 /* SDLAudioStreamingIndicatorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2F85120ED068200A26EF2 /* SDLAudioStreamingIndicatorSpec.m */; };
-		2F214B28243B037C0063376F /* SDLSeatStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F214B26243B037B0063376F /* SDLSeatStatus.h */; };
+		2F1D3F5A243C695B0025C561 /* SDLSeatOccupancySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1D3F59243C695B0025C561 /* SDLSeatOccupancySpec.m */; };
+		2F1D3F5C243C70650025C561 /* SDLSeatStatusSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1D3F5B243C70650025C561 /* SDLSeatStatusSpec.m */; };
+		2F214B28243B037C0063376F /* SDLSeatStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F214B26243B037B0063376F /* SDLSeatStatus.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2F214B29243B037C0063376F /* SDLSeatStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F214B27243B037C0063376F /* SDLSeatStatus.m */; };
 		2F214B2C243B03900063376F /* SDLSeatOccupancy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F214B2A243B038F0063376F /* SDLSeatOccupancy.m */; };
 		2F214B2D243B03900063376F /* SDLSeatOccupancy.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F214B2B243B038F0063376F /* SDLSeatOccupancy.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -2119,6 +2121,8 @@
 		2BF2F84D20ED004000A26EF2 /* SDLAudioStreamingIndicator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDLAudioStreamingIndicator.h; sourceTree = "<group>"; };
 		2BF2F84E20ED004000A26EF2 /* SDLAudioStreamingIndicator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDLAudioStreamingIndicator.m; sourceTree = "<group>"; };
 		2BF2F85120ED068200A26EF2 /* SDLAudioStreamingIndicatorSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDLAudioStreamingIndicatorSpec.m; sourceTree = "<group>"; };
+		2F1D3F59243C695B0025C561 /* SDLSeatOccupancySpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDLSeatOccupancySpec.m; sourceTree = "<group>"; };
+		2F1D3F5B243C70650025C561 /* SDLSeatStatusSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDLSeatStatusSpec.m; sourceTree = "<group>"; };
 		2F214B26243B037B0063376F /* SDLSeatStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDLSeatStatus.h; sourceTree = "<group>"; };
 		2F214B27243B037C0063376F /* SDLSeatStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDLSeatStatus.m; sourceTree = "<group>"; };
 		2F214B2A243B038F0063376F /* SDLSeatOccupancy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDLSeatOccupancy.m; sourceTree = "<group>"; };
@@ -3892,6 +3896,9 @@
 				000DD56D22EF01FC005AB7A7 /* SDLSeatLocationSpec.m */,
 				9FA0CFFF22DF06A0009CF344 /* SDLWindowCapabilitySpec.m */,
 				9FA0D00222DF06B9009CF344 /* SDLWindowTypeCapabilitiesSpec.m */,
+				2F82ACDB2437717600E40F53 /* SDLStabilityControlsStatusSpec.m */,
+				2F1D3F59243C695B0025C561 /* SDLSeatOccupancySpec.m */,
+				2F1D3F5B243C70650025C561 /* SDLSeatStatusSpec.m */,
 			);
 			path = StructSpecs;
 			sourceTree = "<group>";
@@ -6534,6 +6541,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F214B28243B037C0063376F /* SDLSeatStatus.h in Headers */,
+				2FA5CAEA24371D920088AFAE /* SDLStabilityControlsStatus.h in Headers */,
 				2F214B2D243B03900063376F /* SDLSeatOccupancy.h in Headers */,
 				9F425AD222DD980200BE3245 /* SDLWindowCapability.h in Headers */,
 				9F425ADA22DD983500BE3245 /* SDLDisplayCapability.h in Headers */,
@@ -6964,7 +6973,6 @@
 				1E5AD04C1F1F79640029B8AF /* SDLDefrostZone.h in Headers */,
 				1E5AD0601F207AB10029B8AF /* SDLRadioState.h in Headers */,
 				1E5AD0801F20B73E0029B8AF /* SDLButtonPress.h in Headers */,
-				2F214B28243B037C0063376F /* SDLSeatStatus.h in Headers */,
 				884554AC222453A800BAFB6C /* SDLNavigationServiceManifest.h in Headers */,
 				8816772C222097C3001FACFF /* SDLNavigationServiceData.h in Headers */,
 				1E5AD05C1F2064A80029B8AF /* SDLRDSData.h in Headers */,
@@ -8201,6 +8209,7 @@
 				5DB202271F5F2D030061D189 /* SDLImageResolutionSpec.m in Sources */,
 				DA9F7EAA1DCC061A00ACAE48 /* SDLSubscribeWaypointsResponseSpec.m in Sources */,
 				162E835F1A9BDE8B00906325 /* SDLResetGlobalPropertiesResponseSpec.m in Sources */,
+				2F1D3F5C243C70650025C561 /* SDLSeatStatusSpec.m in Sources */,
 				1EE8C4381F347C7300FDC2CF /* SDLRadioBandSpec.m in Sources */,
 				162E835E1A9BDE8B00906325 /* SDLRegisterAppInterfaceResponseSpec.m in Sources */,
 				162E835A1A9BDE8B00906325 /* SDLPerformAudioPassThruResponseSpec.m in Sources */,
@@ -8209,6 +8218,7 @@
 				162E83601A9BDE8B00906325 /* SDLScrollableMessageResponseSpec.m in Sources */,
 				88B3BFA220DA911E00943565 /* SDLFuelRangeSpec.m in Sources */,
 				88A5E7FA220B60EC00495E8A /* SDLGetAppServiceDataSpec.m in Sources */,
+				2F1D3F5A243C695B0025C561 /* SDLSeatOccupancySpec.m in Sources */,
 				162E83791A9BDE8B00906325 /* SDLDeviceStatusSpec.m in Sources */,
 				162E83821A9BDE8B00906325 /* SDLImageSpec.m in Sources */,
 				162E834A1A9BDE8B00906325 /* SDLAddSubMenuResponseSpec.m in Sources */,
