@@ -10,6 +10,7 @@
 #import "SDLRemoteControlCapabilities.h"
 #import "SDLRadioControlCapabilities.h"
 #import "SDLSeatControlCapabilities.h"
+#import "SDLTlcControlCapabilities.h"
 #import "NSMutableDictionary+Store.h"
 #import "SDLRPCParameterNames.h"
 
@@ -18,16 +19,19 @@ NS_ASSUME_NONNULL_BEGIN
 @implementation SDLRemoteControlCapabilities
 
 - (instancetype)initWithClimateControlCapabilities:(nullable NSArray<SDLClimateControlCapabilities *> *)climateControlCapabilities radioControlCapabilities:(nullable NSArray<SDLRadioControlCapabilities *> *)radioControlCapabilities buttonCapabilities:(nullable NSArray<SDLButtonCapabilities *> *)buttonCapabilities {
-
     return [self initWithClimateControlCapabilities:climateControlCapabilities radioControlCapabilities:radioControlCapabilities buttonCapabilities:buttonCapabilities seatControlCapabilities:nil audioControlCapabilities:nil hmiSettingsControlCapabilities:nil lightControlCapabilities:nil];
 }
 
 - (instancetype)initWithClimateControlCapabilities:(nullable NSArray<SDLClimateControlCapabilities *> *)climateControlCapabilities radioControlCapabilities:(nullable NSArray<SDLRadioControlCapabilities *> *)radioControlCapabilities buttonCapabilities:(nullable NSArray<SDLButtonCapabilities *> *)buttonCapabilities seatControlCapabilities:(nullable NSArray<SDLSeatControlCapabilities *> *)seatControlCapabilities audioControlCapabilities:(nullable NSArray<SDLAudioControlCapabilities *> *)audioControlCapabilities hmiSettingsControlCapabilities:(nullable NSArray<SDLHMISettingsControlCapabilities *> *)hmiSettingsControlCapabilities lightControlCapabilities:(nullable NSArray<SDLLightControlCapabilities *> *)lightControlCapabilities {
+    return [self initWithClimateControlCapabilities:climateControlCapabilities radioControlCapabilities:radioControlCapabilities buttonCapabilities:buttonCapabilities seatControlCapabilities:nil audioControlCapabilities:nil hmiSettingsControlCapabilities:nil lightControlCapabilities:nil tlcControlCapabilities:nil];
+}
+
+- (instancetype)initWithClimateControlCapabilities:(nullable NSArray<SDLClimateControlCapabilities *> *)climateControlCapabilities radioControlCapabilities:(nullable NSArray<SDLRadioControlCapabilities *> *)radioControlCapabilities buttonCapabilities:(nullable NSArray<SDLButtonCapabilities *> *)buttonCapabilities seatControlCapabilities:(nullable NSArray<SDLSeatControlCapabilities *> *)seatControlCapabilities audioControlCapabilities:(nullable NSArray<SDLAudioControlCapabilities *> *)audioControlCapabilities hmiSettingsControlCapabilities:(nullable NSArray<SDLHMISettingsControlCapabilities *> *)hmiSettingsControlCapabilities lightControlCapabilities:(nullable NSArray<SDLLightControlCapabilities *> *)lightControlCapabilities tlcControlCapabilities:(nullable NSArray<SDLTlcControlCapabilities *> *)tlcControlCapabilities {
     self = [super init];
     if (!self) {
         return nil;
     }
-
+    
     self.climateControlCapabilities = climateControlCapabilities;
     self.radioControlCapabilities = radioControlCapabilities;
     self.buttonCapabilities = buttonCapabilities;
@@ -35,7 +39,8 @@ NS_ASSUME_NONNULL_BEGIN
     self.audioControlCapabilities = audioControlCapabilities;
     self.hmiSettingsControlCapabilities = hmiSettingsControlCapabilities;
     self.lightControlCapabilities = lightControlCapabilities;
-
+    self.tlcControlCapabilities = tlcControlCapabilities;
+    
     return self;
 }
 
@@ -115,6 +120,14 @@ NS_ASSUME_NONNULL_BEGIN
     if (capability == nil) { return nil; }
 
     return @[capability];
+}
+
+- (void)setTlcControlCapabilities:(nullable NSArray<SDLTlcControlCapabilities *> *)tlcControlCapabilities {
+    [self.store sdl_setObject:tlcControlCapabilities forName:SDLRPCParameterNameTlcControlCapabilities];
+}
+
+- (nullable NSArray<SDLTlcControlCapabilities *> *)tlcControlCapabilities {
+    return [self.store sdl_objectsForName:SDLRPCParameterNameTlcControlCapabilities ofClass:SDLTlcControlCapabilities.class error:nil];
 }
 
 @end

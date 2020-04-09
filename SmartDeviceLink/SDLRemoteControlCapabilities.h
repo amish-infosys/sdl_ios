@@ -11,6 +11,7 @@
 @class  SDLLightControlCapabilities;
 @class  SDLRadioControlCapabilities;
 @class  SDLSeatControlCapabilities;
+@class  SDLTlcControlCapabilities;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -39,7 +40,24 @@ NS_ASSUME_NONNULL_BEGIN
  @return An instance of the SDLRemoteControlCapabilities class
 
  */
-- (instancetype)initWithClimateControlCapabilities:(nullable NSArray<SDLClimateControlCapabilities *> *)climateControlCapabilities radioControlCapabilities:(nullable NSArray<SDLRadioControlCapabilities *> *)radioControlCapabilities buttonCapabilities:(nullable NSArray<SDLButtonCapabilities *> *)buttonCapabilities seatControlCapabilities:(nullable NSArray<SDLSeatControlCapabilities *> *)seatControlCapabilities audioControlCapabilities:(nullable NSArray<SDLAudioControlCapabilities *> *)audioControlCapabilities hmiSettingsControlCapabilities:(nullable NSArray<SDLHMISettingsControlCapabilities *> *)hmiSettingsControlCapabilities lightControlCapabilities:(nullable NSArray<SDLLightControlCapabilities *> *)lightControlCapabilities;
+- (instancetype)initWithClimateControlCapabilities:(nullable NSArray<SDLClimateControlCapabilities *> *)climateControlCapabilities radioControlCapabilities:(nullable NSArray<SDLRadioControlCapabilities *> *)radioControlCapabilities buttonCapabilities:(nullable NSArray<SDLButtonCapabilities *> *)buttonCapabilities seatControlCapabilities:(nullable NSArray<SDLSeatControlCapabilities *> *)seatControlCapabilities audioControlCapabilities:(nullable NSArray<SDLAudioControlCapabilities *> *)audioControlCapabilities hmiSettingsControlCapabilities:(nullable NSArray<SDLHMISettingsControlCapabilities *> *)hmiSettingsControlCapabilities lightControlCapabilities:(nullable NSArray<SDLLightControlCapabilities *> *)lightControlCapabilities __deprecated_msg("Use initWithClimateControlCapabilities:climateControlCapabilities:radioControlCapabilities:buttonCapabilities:seatControlCapabilities:audioControlCapabilities:hmiSettingsControlCapabilities:lightControlCapabilities:tlcControlCapabilities: instead");
+
+/**
+ Constructs a newly allocated SDLRemoteControlCapabilities object with given parameters
+ 
+ @param climateControlCapabilities           Array of SDLClimateControlCapabilities
+ @param radioControlCapabilities             Array of SDLRadioControlCapabilities
+ @param buttonCapabilities                   Array of SDLButtonCapabilities
+ @param lightControlCapabilities             Array of SDLLightControlCapabilities
+ @param seatControlCapabilities              Array of SDLSeatControlCapabilities
+ @param hmiSettingsControlCapabilities       Array of SDLHmMISettingsControlCapabilities
+ @param audioControlCapabilities             Array of SDLAudioControlCapabilities
+ @param tlcControlCapabilities               Array of SDLTlcControlCapabilities
+ 
+ @return An instance of the SDLRemoteControlCapabilities class
+ 
+ */
+- (instancetype)initWithClimateControlCapabilities:(nullable NSArray<SDLClimateControlCapabilities *> *)climateControlCapabilities radioControlCapabilities:(nullable NSArray<SDLRadioControlCapabilities *> *)radioControlCapabilities buttonCapabilities:(nullable NSArray<SDLButtonCapabilities *> *)buttonCapabilities seatControlCapabilities:(nullable NSArray<SDLSeatControlCapabilities *> *)seatControlCapabilities audioControlCapabilities:(nullable NSArray<SDLAudioControlCapabilities *> *)audioControlCapabilities hmiSettingsControlCapabilities:(nullable NSArray<SDLHMISettingsControlCapabilities *> *)hmiSettingsControlCapabilities lightControlCapabilities:(nullable NSArray<SDLLightControlCapabilities *> *)lightControlCapabilities tlcControlCapabilities:(nullable NSArray<SDLTlcControlCapabilities *> *)tlcControlCapabilities;
 
 /**
  * If included, the platform supports RC climate controls.
@@ -91,6 +109,13 @@ NS_ASSUME_NONNULL_BEGIN
  * Optional, Array of SDLLightControlCapabilities, Array length 1 - 100
  */
 @property (nullable, strong, nonatomic) NSArray<SDLLightControlCapabilities *> *lightControlCapabilities;
+
+/**
+ * If included, the platform supports trailer check controls.
+ *
+ * @since SDL 6.0.0
+ */
+@property (nullable, strong, nonatomic) NSArray<SDLTlcControlCapabilities *> *tlcControlCapabilities;
 
 @end
 
