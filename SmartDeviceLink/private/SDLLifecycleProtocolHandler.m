@@ -23,9 +23,9 @@
 #import "SDLRPCFunctionNames.h"
 #import "SDLRPCMessage.h"
 #import "SDLRPCMessageType.h"
-#import "SDLTimer.h"
-
-static const float StartSessionTime = 30.0;
+//#import "SDLTimer.h"
+//
+//static const float StartSessionTime = 10.0;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) SDLNotificationDispatcher *notificationDispatcher;
 
-@property (strong, nonatomic) SDLTimer *rpcStartServiceTimeoutTimer;
+//@property (strong, nonatomic) SDLTimer *rpcStartServiceTimeoutTimer;
 @property (copy, nonatomic) NSString *appId;
 
 @end
@@ -78,21 +78,21 @@ NS_ASSUME_NONNULL_BEGIN
     SDLControlFramePayloadRPCStartService *startServicePayload = [[SDLControlFramePayloadRPCStartService alloc] initWithVersion:SDLMaxProxyProtocolVersion];
     [self.protocol startServiceWithType:SDLServiceTypeRPC payload:startServicePayload.data];
 
-    if (self.rpcStartServiceTimeoutTimer == nil) {
-        self.rpcStartServiceTimeoutTimer = [[SDLTimer alloc] initWithDuration:StartSessionTime repeat:NO];
-        __weak typeof(self) weakSelf = self;
-        self.rpcStartServiceTimeoutTimer.elapsedBlock = ^{
-            SDLLogE(@"Start session timed out after %f seconds, closing the connection.", StartSessionTime);
-            [weakSelf.protocol stopWithCompletionHandler:^{}];
-        };
-    }
-    [self.rpcStartServiceTimeoutTimer start];
+//    if (self.rpcStartServiceTimeoutTimer == nil) {
+//        self.rpcStartServiceTimeoutTimer = [[SDLTimer alloc] initWithDuration:StartSessionTime repeat:NO];
+//        __weak typeof(self) weakSelf = self;
+//        self.rpcStartServiceTimeoutTimer.elapsedBlock = ^{
+//            SDLLogE(@"Start session timed out after %f seconds, closing the connection.", StartSessionTime);
+//            [weakSelf.protocol stopWithCompletionHandler:^{}];
+//        };
+//    }
+//    [self.rpcStartServiceTimeoutTimer start];
 }
 
 /// Called when the transport is closed.
 - (void)protocolDidClose:(SDLProtocol *)protocol {
     if (self.protocol != protocol) { return; }
-    [[SDLGlobals sharedGlobals] reset];
+//    [[SDLGlobals sharedGlobals] reset];
 
     SDLLogW(@"Transport disconnected");
     [self.notificationDispatcher postNotificationName:SDLTransportDidDisconnect infoObject:nil];
@@ -111,7 +111,7 @@ NS_ASSUME_NONNULL_BEGIN
     SDLLogD(@"Start Service (ACK) SessionId: %d for serviceType %d", startServiceACK.header.sessionID, startServiceACK.header.serviceType);
 
     if (startServiceACK.header.serviceType == SDLServiceTypeRPC) {
-        [self.rpcStartServiceTimeoutTimer cancel];
+//        [self.rpcStartServiceTimeoutTimer cancel];
         [self.notificationDispatcher postNotificationName:SDLRPCServiceDidConnect infoObject:nil];
     }
 }
@@ -122,7 +122,7 @@ NS_ASSUME_NONNULL_BEGIN
     SDLLogD(@"Start Service (NAK): SessionId: %d for serviceType %d", startServiceNAK.header.sessionID, startServiceNAK.header.serviceType);
 
     if (startServiceNAK.header.serviceType == SDLServiceTypeRPC) {
-        [self.rpcStartServiceTimeoutTimer cancel];
+//        [self.rpcStartServiceTimeoutTimer cancel];
         [self.notificationDispatcher postNotificationName:SDLRPCServiceConnectionDidError infoObject:nil];
     }
 }
@@ -133,7 +133,7 @@ NS_ASSUME_NONNULL_BEGIN
     SDLLogD(@"End Service (ACK): SessionId: %d for serviceType %d", endServiceACK.header.sessionID, endServiceACK.header.serviceType);
 
     if (endServiceACK.header.serviceType == SDLServiceTypeRPC) {
-        [self.rpcStartServiceTimeoutTimer cancel];
+//        [self.rpcStartServiceTimeoutTimer cancel];
         [self.notificationDispatcher postNotificationName:SDLRPCServiceDidDisconnect infoObject:nil];
     }
 }
@@ -160,7 +160,7 @@ NS_ASSUME_NONNULL_BEGIN
 
     // If we were unable to create the message, it's an unknown type; discard it
     if (newMessage == nil) {
-        SDLLogE(@"Unable to create message for RPC: %@", rpcMessageAsDictionary);
+//        SDLLogE(@"Unable to create message for RPC: %@", rpcMessageAsDictionary);
         return;
     }
 
